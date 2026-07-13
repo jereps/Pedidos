@@ -1,0 +1,11 @@
+/workspace/src/Pedidos.Domain/bin/Debug/net10.0/Pedidos.Domain.deps.json
+/workspace/src/Pedidos.Domain/bin/Debug/net10.0/Pedidos.Domain.dll
+/workspace/src/Pedidos.Domain/bin/Debug/net10.0/Pedidos.Domain.pdb
+/workspace/src/Pedidos.Domain/obj/Debug/net10.0/Pedidos.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspace/src/Pedidos.Domain/obj/Debug/net10.0/Pedidos.Domain.AssemblyInfoInputs.cache
+/workspace/src/Pedidos.Domain/obj/Debug/net10.0/Pedidos.Domain.AssemblyInfo.cs
+/workspace/src/Pedidos.Domain/obj/Debug/net10.0/Pedidos.Domain.csproj.CoreCompileInputs.cache
+/workspace/src/Pedidos.Domain/obj/Debug/net10.0/Pedidos.Domain.dll
+/workspace/src/Pedidos.Domain/obj/Debug/net10.0/refint/Pedidos.Domain.dll
+/workspace/src/Pedidos.Domain/obj/Debug/net10.0/Pedidos.Domain.pdb
+/workspace/src/Pedidos.Domain/obj/Debug/net10.0/ref/Pedidos.Domain.dll
