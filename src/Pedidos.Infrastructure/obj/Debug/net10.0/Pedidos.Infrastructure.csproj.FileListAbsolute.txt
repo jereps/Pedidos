@@ -15,3 +15,4 @@
 /workspace/src/Pedidos.Infrastructure/obj/Debug/net10.0/refint/Pedidos.Infrastructure.dll
 /workspace/src/Pedidos.Infrastructure/obj/Debug/net10.0/Pedidos.Infrastructure.pdb
 /workspace/src/Pedidos.Infrastructure/obj/Debug/net10.0/ref/Pedidos.Infrastructure.dll
+/workspace/src/Pedidos.Infrastructure/obj/Debug/net10.0/Pedidos.Infrastructure.sourcelink.json

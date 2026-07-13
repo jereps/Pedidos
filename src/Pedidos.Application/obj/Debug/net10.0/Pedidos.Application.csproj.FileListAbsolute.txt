@@ -13,3 +13,4 @@
 /workspace/src/Pedidos.Application/obj/Debug/net10.0/refint/Pedidos.Application.dll
 /workspace/src/Pedidos.Application/obj/Debug/net10.0/Pedidos.Application.pdb
 /workspace/src/Pedidos.Application/obj/Debug/net10.0/ref/Pedidos.Application.dll
+/workspace/src/Pedidos.Application/obj/Debug/net10.0/Pedidos.Application.sourcelink.json

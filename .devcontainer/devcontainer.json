@@ -49,6 +49,6 @@
         "ms-dotnettools.csdevkit"
       ]
     }
-  }
-  // "postCreateCommand": "dotnet restore"
+  },
+  "postCreateCommand": "dotnet tool restore"
 }

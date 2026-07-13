@@ -5,6 +5,8 @@ using Pedidos.Application.Pedidos.Services;
 using Pedidos.Domain.Repositories;
 using Pedidos.Infrastructure.Context;
 using Pedidos.Infrastructure.Repositories;
+using Pedidos.Application.Clientes.Dtos;
+using Pedidos.Application.Clientes.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,8 +20,9 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
         .UseSnakeCaseNamingConvention());
 
 builder.Services.AddScoped<IPedidoService, PedidoService>();
-
 builder.Services.AddScoped<IPedidosRepository, PedidoRepository>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -45,11 +48,15 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+
+
+//## Pedidos Endpoints
+
 app.MapPost("/api/pedidos", async (CriarPedidoDto dto, IPedidoService pedidoService, CancellationToken cancellationToken) =>
 {
     long pedidoId = await pedidoService.CriarPedidoAsync(dto,cancellationToken);
 
-    return Results.Created($"/api/pedido/{pedidoId}",new {Id = pedidoId} );
+    return Results.Created($"/api/pedidos/{pedidoId}",new {Id = pedidoId} );
 });
 
 app.MapGet("/api/pedidos/{id:long}",async (long id, IPedidoService pedidoService, CancellationToken cancellationToken) =>
@@ -87,6 +94,55 @@ app.MapDelete("/api/pedidos/{id:long}", async (long id, IPedidoService pedidoSer
 
     return Results.NoContent();
 });
+
+
+//##Clientes Endpoints
+
+
+app.MapPost("/api/clientes", async (CriarClienteDto dto, IClienteService clienteService, CancellationToken cancellationToken) =>
+{
+    long clienteId = await clienteService.CriarCliente(dto,cancellationToken);
+    return Results.Created($"/api/clientes/{clienteId}",new {Id = clienteId} );
+});
+
+app.MapGet("/api/clientes/{id:long}",async (long id, IClienteService clienteService, CancellationToken cancellationToken) =>
+{
+    var cliente = await clienteService.ObterClientePorId(id,cancellationToken);
+
+    if (cliente is null)
+        return Results.NotFound(new { Mensagem = $"Cliente com ID {id} não foi encontrado." });
+
+    return Results.Ok(cliente);
+});
+
+app.MapGet("/api/clientes", async (IClienteService clienteService, CancellationToken cancellationToken) =>
+{
+    var clientes = await clienteService.ObterTodosClientes(cancellationToken);
+    return Results.Ok(clientes);
+});
+
+app.MapPut("/api/clientes/{id:long}", async (long id, AtualizarClienteDto dto, IClienteService clienteService, CancellationToken cancellationToken) =>
+{
+    var clienteAtualizado = await clienteService.AtualizarCliente(id,dto,cancellationToken);
+
+    if (clienteAtualizado is null)
+        return Results.NotFound(new { Mensagem = $"Cliente com ID {id} não encontrado para atualizar." });
+
+    return Results.Ok(clienteAtualizado);
+});
+
+app.MapDelete("/api/clientes/{id:long}", async (long id, IClienteService clienteService, CancellationToken cancellationToken) =>
+{
+    var clienteDeletado = await clienteService.DeletarCliente(id,cancellationToken);
+
+    if (!clienteDeletado)
+        return Results.NotFound(new { Mensagem = $"Cliente com ID {id} não encontrado para exclusão." });
+
+    return Results.NoContent();
+});
+
+
+
 
 using (var scope = app.Services.CreateScope())
 {

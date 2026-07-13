@@ -9,6 +9,8 @@ public class AppDbContext : DbContext
 
     public DbSet<Pedido> Pedidos => Set<Pedido>();
 
+    public DbSet<Cliente> Clientes => Set<Cliente>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

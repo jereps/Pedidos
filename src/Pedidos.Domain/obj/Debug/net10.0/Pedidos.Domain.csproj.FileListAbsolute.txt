@@ -9,3 +9,4 @@
 /workspace/src/Pedidos.Domain/obj/Debug/net10.0/refint/Pedidos.Domain.dll
 /workspace/src/Pedidos.Domain/obj/Debug/net10.0/Pedidos.Domain.pdb
 /workspace/src/Pedidos.Domain/obj/Debug/net10.0/ref/Pedidos.Domain.dll
+/workspace/src/Pedidos.Domain/obj/Debug/net10.0/Pedidos.Domain.sourcelink.json
