@@ -1,4 +1,4 @@
-# 🏛️ Clean Architecture com .NET 8+ e PostgreSQL
+# 🏛️ Clean Architecture com .NET 10 e PostgreSQL
 
 Este projeto é uma API REST desenvolvida em **.NET 10** aplicando os princípios da **Clean Architecture (Arquitetura Limpa)**, garantindo desacoplamento, alta testabilidade e independência de tecnologias externas. A persistência de dados utiliza o **Entity Framework Core** integrado ao banco de dados **PostgreSQL**.
 
